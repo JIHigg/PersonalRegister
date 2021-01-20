@@ -20,15 +20,23 @@ namespace PersonalRegister
             string input = "";
             int salary = 0;
             int count = 0;
-                      
-            //Needs an input loop that actually works.
-            Console.WriteLine("\nPlease enter Employee name/Ange anställdas namn: ");
-            input = Console.ReadLine();
-            names.Add(input);//Saves input name to list.
 
-            Console.WriteLine("\nPlease enter Employee salary/Ange anställdas lön: ");
-            salary = int.Parse(Console.ReadLine());
-            pay.Add(salary); //Saves input salary to list.
+            while (input != "X")
+            {
+                //Needs an input loop that actually works.
+                Console.WriteLine("\nPlease enter Employee name/Ange anställdas namn." +
+                    " Enter 'X' to exit. : ");
+                input = Console.ReadLine();
+                if(input == "X")//Input to exit loop.
+                {
+                    break;
+                }
+                names.Add(input);//Saves input name to list.
+
+                Console.WriteLine("\nPlease enter Employee salary/Ange anställdas lön: ");
+                salary = int.Parse(Console.ReadLine());
+                pay.Add(salary); //Saves input salary to list.
+            }
 
             Console.WriteLine("\nCurrent Employees/Personal");
             Console.WriteLine("-----------------------------");//Header for list
