@@ -19,22 +19,32 @@ namespace PersonalRegister
             List<string> names = new List<string>();
             string input = "";
             int salary = 0;
+            int count = 0;
+                      
+            //Needs an input loop that actually works.
+            Console.WriteLine("\nPlease enter Employee name/Ange anställdas namn: ");
+            input = Console.ReadLine();
+            names.Add(input);//Saves input name to list.
 
-            if (input != "Stop")
-            {
-                Console.WriteLine("Please enter Employee name/Ange anställdas namn: ");
-                input = Console.ReadLine();
-                names.Add(input);
+            Console.WriteLine("\nPlease enter Employee salary/Ange anställdas lön: ");
+            salary = int.Parse(Console.ReadLine());
+            pay.Add(salary); //Saves input salary to list.
 
-                Console.WriteLine("Please enter Employee salary/Ange anställdas lön: ");
-                salary = int.Parse(Console.ReadLine());
-                pay.Add(salary);
-            }
-            for (int i = 0; i >= input.Length; i++)
+            Console.WriteLine("\nCurrent Employees/Personal");
+            Console.WriteLine("-----------------------------");//Header for list
+
+            foreach (string name in names)//Displays names and salaries
             {
-                Console.WriteLine("Employee Name/Anställd Namn: {0}", names[i]);
-                Console.WriteLine("Employee Salary/Anställd Lön: {0}", pay[i]);
+                Console.WriteLine("\nEmployee Name/Anställd Namn: {0}", names[count]);
+                Console.WriteLine("Employee Salary/Anställd Lön: {0}", pay[count]);
+                count++;
             }
         }
+    }
+    class Method
+    {
+        
+        
+          
     }
 }
