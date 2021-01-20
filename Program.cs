@@ -20,10 +20,20 @@ namespace PersonalRegister
             string input = "";
             int salary = 0;
             int count = 0;
+            SeedData();//Data set down below
+            Employee[] employees = payroll.GetEmployees();// Builds list of employees.
+
+            foreach (Employee employee in employees)//Displays the Data set from above
+            {
+                Console.WriteLine($"Name: {employee.Name}  Salary: {employee.Salary}");
+            }
+
+
+            
 
             while (input != "X")
             {
-                //Needs an input loop that actually works.
+                //Needs an input loop that actually works. -Fixed.
                 Console.WriteLine("\nPlease enter Employee name/Ange anställdas namn." +
                     " Enter 'X' to exit. : ");
                 input = Console.ReadLine();
@@ -48,11 +58,12 @@ namespace PersonalRegister
                 count++;
             }
         }
-    }
-    class Method
-    {
-        
-        
-          
+        private static void SeedData()
+        {
+            payroll.AddEmployee("Max", 10000);
+            payroll.AddEmployee("Colin", 50000);
+            payroll.AddEmployee("Liz", 20000);
+        }
+        static Payroll payroll = new Payroll();
     }
 }
